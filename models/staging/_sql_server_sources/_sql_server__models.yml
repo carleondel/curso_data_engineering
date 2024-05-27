@@ -4,7 +4,7 @@ models:
   - name: stg__sql_server_sources__addresses
     columns:
       - name: address_id
-      - name: zipcode          
+      - name: zipcode
       - name: country
       - name: address
       - name: state
@@ -14,7 +14,7 @@ models:
   - name: stg__sql_server_sources__events
     columns:
       - name: event_id
-      - name: page_url          
+      - name: page_url
       - name: event_type
       - name: user_id
       - name: product_id
@@ -27,15 +27,15 @@ models:
   - name: stg__sql_server_sources__order_items
     columns:
       - name: order_id
-      - name: product_id      
+      - name: product_id
       - name: quantity
       - name: _fivetran_deleted
       - name: _fivetran_synced
-        
+
   - name: stg__sql_server_sources__orders
     columns:
       - name: order_id
-      - name: shipping_service           
+      - name: shipping_service
       - name: shipping_cost
       - name: address_id
       - name: created_at
@@ -49,11 +49,11 @@ models:
       - name: status
       - name: _fivetran_deleted
       - name: _fivetran_synced
-   
+
   - name: stg__sql_server_sources__products
     columns:
       - name: product_id
-      - name: price          
+      - name: price
       - name: name
       - name: inventory
       - name: _fivetran_deleted
@@ -62,7 +62,7 @@ models:
   - name: stg__sql_server_sources__promos
     columns:
       - name: promo_id
-      - name: discount          
+      - name: discount
       - name: status
       - name: _fivetran_deleted
       - name: _fivetran_synced
@@ -70,7 +70,7 @@ models:
   - name: stg__sql_server_sources__users
     columns:
       - name: user_id
-      - name: updated_at          
+      - name: updated_at
       - name: address_id
       - name: last_name
       - name: created_at
