@@ -13,7 +13,10 @@ renamed as (
         promo_id AS description,
         discount AS discount_total_euros,
         status,
-        _fivetran_deleted,
+        COALESCE(_fivetran_deleted, false) AS _fivetran_deleted,
+        -- esto lo usaremos para filtrar mas adelante
+        -- y usar un where para quedarnos solo con los datos 
+        -- actuales
         _fivetran_synced
 
     from source
@@ -21,3 +24,4 @@ renamed as (
 )
 
 select * from renamed
+where _fivetran_deleted = false

@@ -14,7 +14,7 @@ renamed as (
         country,
         address,
         state,
-        _fivetran_deleted,
+        COALESCE(_fivetran_deleted, false) AS _fivetran_deleted,
         _fivetran_synced
 
     from source
@@ -22,3 +22,4 @@ renamed as (
 )
 
 select * from renamed
+where _fivetran_deleted = false
