@@ -4,6 +4,9 @@ models:
   - name: stg__sql_server_sources__addresses
     columns:
       - name: address_id
+        tests:
+          - unique
+          - not_null
       - name: zipcode
       - name: country
       - name: address
