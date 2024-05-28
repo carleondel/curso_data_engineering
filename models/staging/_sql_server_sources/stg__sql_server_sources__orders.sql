@@ -14,7 +14,12 @@ renamed as (
         shipping_cost,
         address_id,
         created_at,
-        promo_id,
+        case 
+            WHEN TRIM(promo_id) = '' then 'no_promo'
+            else promo_id
+        end AS promo_name,
+        md5(promo_id) AS promo_id, -- esta creando los mismos hash que en promos. 
+                                    --a los espacios en blanco les estacreando otro hash
         estimated_delivery_at,
         order_cost,
         user_id,
