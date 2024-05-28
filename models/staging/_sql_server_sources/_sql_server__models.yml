@@ -1,7 +1,7 @@
 version: 2
 
 models:
-  - name: stg__sql_server_sources__addresses
+  - name: stg_sql_server_dbo__addresses
     columns:
       - name: address_id
         tests:
@@ -14,7 +14,7 @@ models:
       - name: _fivetran_deleted
       - name: _fivetran_synced
 
-  - name: stg__sql_server_sources__events
+  - name: stg_sql_server_dbo__events
     columns:
       - name: event_id
       - name: page_url
@@ -27,7 +27,7 @@ models:
       - name: _fivetran_deleted
       - name: _fivetran_synced
 
-  - name: stg__sql_server_sources__order_items
+  - name: stg_sql_server_dbo__order_items
     columns:
       - name: order_id
       - name: product_id
@@ -35,7 +35,7 @@ models:
       - name: _fivetran_deleted
       - name: _fivetran_synced
 
-  - name: stg__sql_server_sources__orders
+  - name: stg_sql_server_dbo__orders
     columns:
       - name: order_id
       - name: shipping_service
@@ -53,7 +53,7 @@ models:
       - name: _fivetran_deleted
       - name: _fivetran_synced
 
-  - name: stg__sql_server_sources__products
+  - name: stg_sql_server_dbo__products
     columns:
       - name: product_id
       - name: price
@@ -62,7 +62,7 @@ models:
       - name: _fivetran_deleted
       - name: _fivetran_synced
 
-  - name: stg__sql_server_sources__promos
+  - name: stg_sql_server_dbo__promos
     columns:
       - name: promo_id
       - name: discount
@@ -70,7 +70,7 @@ models:
       - name: _fivetran_deleted
       - name: _fivetran_synced
 
-  - name: stg__sql_server_sources__users
+  - name: stg_sql_server_dbo__users
     columns:
       - name: user_id
       - name: updated_at
