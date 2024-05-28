@@ -11,7 +11,7 @@ renamed as (
     select
         md5(cast(promo_id as text)) AS promo_id,
         promo_id AS description,
-        discount,
+        discount AS discount_total_euros,
         status,
         _fivetran_deleted,
         _fivetran_synced
