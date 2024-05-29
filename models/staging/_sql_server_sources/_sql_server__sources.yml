@@ -20,6 +20,9 @@ sources:
         loaded_at_field: _fivetran_synced  #te indica la frescura del dato
         columns:
           - name: address_id
+            tests:
+              - not_null
+              - unique
           - name: zipcode
           - name: country
           - name: address
