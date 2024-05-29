@@ -13,7 +13,7 @@ renamed as (
         shipping_service,
         shipping_cost,
         address_id,
-        created_at,
+        created_at AS order_placed_date,
         case 
             WHEN TRIM(promo_id) = '' then 'no_promo'
             else promo_id
@@ -24,7 +24,7 @@ renamed as (
         order_cost,
         user_id,
         order_total,
-        delivered_at,
+        delivered_at AS delivery_date ,
         tracking_id,
         status,
         COALESCE(_fivetran_deleted, false) AS _fivetran_deleted,

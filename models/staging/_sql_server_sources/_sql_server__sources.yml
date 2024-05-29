@@ -24,6 +24,8 @@ sources:
               - not_null
               - unique
           - name: zipcode
+            tests:
+              - positive_values
           - name: country
           - name: address
           - name: state
