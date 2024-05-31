@@ -17,7 +17,7 @@ renamed as (
         -- esto lo usaremos para filtrar mas adelante
         -- y usar un where para quedarnos solo con los datos 
         -- actuales
-        _fivetran_synced
+        CONVERT_TIMEZONE('UTC',_fivetran_synced) AS _fivetran_synced
 
     from source
 

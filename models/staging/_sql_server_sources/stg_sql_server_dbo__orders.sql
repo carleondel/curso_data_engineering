@@ -13,22 +13,22 @@ renamed as (
         shipping_service,
         shipping_cost,
         address_id,
-        created_at AS order_placed_date,
+        CONVERT_TIMEZONE('UTC',created_at) AS order_placed_date_UTC,
         case 
             WHEN TRIM(promo_id) = '' then 'no_promo'
             else promo_id
         end AS promo_name,
         md5(promo_id) AS promo_id, -- esta creando los mismos hash que en promos. 
                                     --a los espacios en blanco les estacreando otro hash
-        estimated_delivery_at,
+        CONVERT_TIMEZONE('UTC',estimated_delivery_at) AS estimated_delivery_at_UTC,
         order_cost,
         user_id,
         order_total,
-        delivered_at AS delivery_date ,
+        CONVERT_TIMEZONE('UTC', delivered_at) AS delivery_date_UTC ,
         tracking_id,
         status,
         COALESCE(_fivetran_deleted, false) AS _fivetran_deleted,
-        _fivetran_synced
+        CONVERT_TIMEZONE('UTC',_fivetran_synced) AS _fivetran_synced
 
     from source
 

@@ -10,16 +10,16 @@ renamed as (
 
     select
         user_id,
-        updated_at,
+        CONVERT_TIMEZONE('UTC', updated_at) AS updated_at_UTC,
         address_id,
         last_name,
-        created_at,
+        CONVERT_TIMEZONE('UTC', created_at) AS created_at_UTC,
         phone_number,
         total_orders,
         first_name,
         email,
         COALESCE(_fivetran_deleted, false) AS _fivetran_deleted,
-        _fivetran_synced
+        CONVERT_TIMEZONE('UTC', _fivetran_synced) AS _fivetran_synced
 
     from source
 

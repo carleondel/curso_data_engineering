@@ -15,7 +15,7 @@ renamed as (
         address,
         state,
         COALESCE(_fivetran_deleted, false) AS _fivetran_deleted,
-        _fivetran_synced
+         CONVERT_TIMEZONE('UTC',_fivetran_synced) AS _fivetran_synced
 
     from source
 

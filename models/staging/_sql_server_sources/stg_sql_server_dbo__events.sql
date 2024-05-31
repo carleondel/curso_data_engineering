@@ -18,7 +18,7 @@ renamed as (
         created_at,
         order_id,
         COALESCE(_fivetran_deleted, false) AS _fivetran_deleted,
-        _fivetran_synced
+        CONVERT_TIMEZONE('UTC',_fivetran_synced) AS _fivetran_synced
 
     from source
 
