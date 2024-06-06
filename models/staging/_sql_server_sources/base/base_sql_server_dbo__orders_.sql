@@ -45,4 +45,4 @@ renamed as (
 )
 
 select * from renamed
-where _fivetran_deleted = false
+where _fivetran_deleted = false 
