@@ -1,5 +1,12 @@
 -- AQUI QUIERO COMPLETAR EL CAMPO DE USERS TOTAL_ORDERS (TOTAL DE PEDIDOS REALIZADOS
 -- POR USUARIO)
+/* MATERIALIZAMOS COMO TABLA POR TENER YA TRANSFORMACIONES ALGO MAS COMPLEJAS*/
+{{
+  config(
+    materialized='table'
+  )
+}}
+
 with
 
     stg_orders as (select * from {{ ref("stg_sql_server_dbo__orders") }}),
