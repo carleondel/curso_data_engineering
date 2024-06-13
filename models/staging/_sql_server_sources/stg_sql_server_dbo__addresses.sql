@@ -14,11 +14,12 @@ renamed as (
         country,
         address,
         state,
-        _fivetran_deleted,
-        _fivetran_synced
+        COALESCE(_fivetran_deleted, false) AS _fivetran_deleted,
+         CONVERT_TIMEZONE('UTC',_fivetran_synced) AS _fivetran_synced
 
     from source
 
 )
 
 select * from renamed
+where _fivetran_deleted = false
